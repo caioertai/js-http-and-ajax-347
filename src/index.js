@@ -1,9 +1,9 @@
 const moviesList = document.querySelector("#movie-results");
 const searchForm = document.querySelector("#search-movies");
-const formQuery  = document.querySelector("#keyword");
+const formQuery = document.querySelector("#keyword");
 
 const insertMovieTag = (movie) => {
-  const movieTitle  = movie.Title;
+  const movieTitle = movie.Title;
   const moviePosterURL = movie.Poster;
 
   const movieTag = `
@@ -14,7 +14,7 @@ const insertMovieTag = (movie) => {
   `;
 
   moviesList.insertAdjacentHTML("beforeEnd", movieTag);
-}
+};
 
 const fetchAndUpdateMoviesList = (query) => {
   fetch(`http://www.omdbapi.com/?s=${query}&apikey=adf1f2d7`)
@@ -23,7 +23,7 @@ const fetchAndUpdateMoviesList = (query) => {
       moviesList.innerHTML = "";
 
       const movies = data.Search;
-      movies.forEach(insertMovieTag)
+      movies.forEach(insertMovieTag);
     });
 };
 
@@ -31,9 +31,9 @@ const handleMoviesSearchForm = (event) => {
   event.preventDefault();
 
   const query = formQuery.value;
-  fetchAndUpdateMoviesList(query)
+  fetchAndUpdateMoviesList(query);
 };
 
-searchForm.addEventListener("submit", handleMoviesSearchForm)
+searchForm.addEventListener("submit", handleMoviesSearchForm);
 
 fetchAndUpdateMoviesList("harry potter");
