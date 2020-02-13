@@ -1,0 +1,38 @@
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-gap: 0.5rem /* 1 rem = 16px */
+}
+
+.movies-grid > img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  cursor: grab;
+}
+
+.movies-grid > img:active {
+  cursor: grabbing;
+}
+
+.movies-grid > img.sortable-ghost {
+  filter: grayscale(1);
+  opacity: 0.25;
+}
+
+#preview, #editor {
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+#preview {
+  min-height: 100px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 6px 12px;
+  text-align: left;
+}
+
+#preview img {
+  max-width: 100%;
+}
