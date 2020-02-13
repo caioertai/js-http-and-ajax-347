@@ -1,9 +1,9 @@
-const moviesList = document.querySelector("#movie-results");
 const searchForm = document.querySelector("#search-movies");
-const formQuery = document.querySelector("#keyword");
+const moviesList = document.querySelector("#movie-results");
+const formQuery  = document.querySelector("#keyword");
 
 const insertMovieTag = (movie) => {
-  const movieTitle = movie.Title;
+  const movieTitle     = movie.Title;
   const moviePosterURL = movie.Poster;
 
   const movieTag = `
